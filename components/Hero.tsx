@@ -1,4 +1,4 @@
-import { hero } from '@/lib/content'
+import { hero, site } from '@/lib/content'
 
 export default function Hero() {
   return (
@@ -103,7 +103,9 @@ export default function Hero() {
             {hero.ctaPrimary}
           </a>
           <a
-            href="#contact"
+            href={`https://${site.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto border-2 border-[#E78838] text-[#FFB981] hover:bg-[#E78838] hover:text-white font-bold text-base px-8 py-4 rounded-full transition-all focus-visible:outline-2 focus-visible:outline-white"
           >
             {hero.ctaSecondary}
