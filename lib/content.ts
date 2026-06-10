@@ -29,7 +29,7 @@ export const hero = {
   subtitle:
     "NigerVerdé produit près de Niamey des légumes frais, locaux et traçables grâce à des serres adaptées à la chaleur, à l’hydroponie, à l’énergie solaire et à l’agriculture de précision par drones.",
   ctaPrimary: "Découvrir le projet",
-  ctaSecondary: "Demander un devis",
+  ctaSecondary: "Commander sur WhatsApp",
   badges: [
     { icon: "💧", label: "Moins d’eau" },
     { icon: "☀️", label: "100 % solaire" },

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { nav } from '@/lib/content'
 
 const sectionIds = ['projet', 'modele', 'technologie', 'drone', 'cultures', 'marche', 'contact']
@@ -52,15 +51,24 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo — emblem only */}
-          <a href="#" className="shrink-0" aria-label="NigerVerdé — Accueil">
-            <Image
+          {/* Logo */}
+          <a href="#" className="shrink-0 flex items-center gap-2.5" aria-label="NigerVerdé — Accueil">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={scrolled ? '/logo.svg' : '/logo-white.svg'}
               alt="NigerVerdé"
               width={44}
               height={44}
               className="w-10 h-10 lg:w-11 lg:h-11"
-              priority
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={scrolled ? '/wordmark-green.svg' : '/wordmark-white.svg'}
+              alt=""
+              aria-hidden="true"
+              className="hidden lg:block h-8 w-auto"
+              width={120}
+              height={32}
             />
           </a>
 

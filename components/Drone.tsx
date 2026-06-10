@@ -46,47 +46,6 @@ const capabilities = [
   },
 ]
 
-const steps = [
-  { num: 1, title: 'Observation', desc: "Repérer une anomalie : inspections manuelles, images aériennes, données d'irrigation, capteurs d'humidité, écarts de rendement." },
-  { num: 2, title: 'Vérification au sol', desc: "Inspecter directement les plantes pour identifier la véritable cause — manque d'eau, carence, ravageur, maladie ou panne du goutte-à-goutte." },
-  { num: 3, title: 'Décision', desc: "Choisir l'action juste : correction de l'irrigation ou de la fertilisation, taille, désherbage, drainage, traitement biologique ou pulvérisation ciblée." },
-  { num: 4, title: 'Préparation de la mission', desc: "Définir parcelle, surface, produit, dose, volume de bouillie, hauteur de vol, vitesse, largeur de travail, météo et zones à éviter." },
-  { num: 5, title: 'Intervention', desc: "Pulvériser en respectant limites de parcelle, distances de sécurité, doses, vent et protection des travailleurs, habitations et points d'eau." },
-  { num: 6, title: 'Contrôle', desc: "Revenir vérifier la qualité de la couverture, l'évolution du problème, l'efficacité du traitement et le besoin éventuel d'une nouvelle intervention." },
-]
-
-const levels = [
-  {
-    badge: 'NIVEAU ACTUEL',
-    title: 'Pulvérisation & suivi de terrain',
-    cardBg: 'bg-[#134F47]',
-    badgeColor: 'text-[#E78838]',
-    titleColor: 'text-white',
-    checkColor: 'text-[#E78838]',
-    itemColor: 'text-white/80',
-    items: [
-      "Pulvérisation agricole et interventions localisées, bloc par bloc",
-      "Suivi visuel lorsqu'une caméra compatible est disponible",
-      "Documentation des opérations et comparaison des blocs",
-      "Réduction du travail manuel de pulvérisation",
-    ],
-  },
-  {
-    badge: 'ÉVOLUTION PRÉVUE',
-    title: 'Cartographie multispectrale & NDVI',
-    cardBg: 'bg-[#F6EFE6]',
-    badgeColor: 'text-[#E78838]',
-    titleColor: 'text-[#134F47]',
-    checkColor: 'text-[#1B9548]',
-    itemColor: 'text-[#5B6B61]',
-    items: [
-      "Acquisition d'un drone multispectral dédié",
-      "Cartographie NDVI et suivi détaillé de la vigueur des cultures",
-      "Détection précoce des anomalies et zones de stress",
-      "Cartes de prescription et traitement différencié des zones",
-    ],
-  },
-]
 
 export default function Drone() {
   return (
@@ -166,26 +125,6 @@ export default function Drone() {
         </div>
       </div>
 
-      {/* 6-step procedure */}
-      <div className="py-14 bg-[#FBFDF9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548] mb-8">La procédure d&apos;intervention · 6 étapes</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {steps.map((step) => (
-              <div key={step.num} className="bg-white rounded-2xl p-5 border border-[#E3EBE2] shadow-sm flex gap-4">
-                <div className="shrink-0 w-8 h-8 bg-[#1B9548] rounded-full flex items-center justify-center text-white font-bold text-sm">
-                  {step.num}
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-[#134F47] text-sm mb-1">{step.title}</h3>
-                  <p className="text-[#5B6B61] text-xs leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Safety callout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
         <div className="bg-[#134F47] rounded-2xl px-6 py-5 flex items-start gap-5">
@@ -201,37 +140,6 @@ export default function Drone() {
         </div>
       </div>
 
-      {/* Two precision levels */}
-      <div className="py-14 bg-[#FBFDF9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548] shrink-0">Deux niveaux de précision</p>
-            <div className="flex-1 h-px bg-[#E3EBE2]" aria-hidden="true" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {levels.map((level) => (
-              <div key={level.badge} className={`${level.cardBg} rounded-2xl p-6`}>
-                <p className={`text-xs font-bold tracking-[0.15em] uppercase ${level.badgeColor} mb-3`}>{level.badge}</p>
-                <h3 className={`font-display font-bold text-2xl mb-5 ${level.titleColor}`}>{level.title}</h3>
-                <ul className="space-y-3">
-                  {level.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <svg className={`w-4 h-4 shrink-0 mt-0.5 ${level.checkColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className={`text-sm leading-snug ${level.itemColor}`}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <p className="text-[#5B6B61] text-xs leading-relaxed mt-6 max-w-3xl">
-            Le drone de pulvérisation déjà acquis n&apos;est pas un drone multispectral. La cartographie NDVI nécessite un capteur dédié, un positionnement précis et un traitement spécialisé des images : c&apos;est une évolution prévue de notre agriculture de précision, et{' '}
-            <span className="text-[#E78838] font-medium">non une capacité actuelle.</span>
-          </p>
-        </div>
-      </div>
 
     </section>
   )
