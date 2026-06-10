@@ -1,6 +1,27 @@
+"use client"
+
+import { useState } from 'react'
 import { site } from '@/lib/content'
+import { sendContactEmail } from '@/app/actions/contact'
+
+type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function FinalCta() {
+  const [status, setStatus] = useState<Status>('idle')
+  const [errorMsg, setErrorMsg] = useState<string>('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus('submitting')
+    const result = await sendContactEmail(new FormData(e.currentTarget))
+    if (result.success) {
+      setStatus('success')
+    } else {
+      setErrorMsg(result.error ?? 'Erreur inconnue.')
+      setStatus('error')
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -72,67 +93,89 @@ export default function FinalCta() {
               Ou laissez un message écrit
             </p>
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <form
-                action={`mailto:${site.email}`}
-                method="GET"
-                className="space-y-5"
-                aria-label="Formulaire de contact"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {status === 'success' ? (
+                <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-[#1B9548]/10 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-[#1B9548]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="font-bold text-[#134F47] text-lg">Message envoyé !</p>
+                  <p className="text-[#5B6B61] text-sm">Nous vous répondrons sous 24 h.</p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="mt-2 text-xs text-[#1B9548] hover:underline"
+                  >
+                    Envoyer un autre message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5" aria-label="Formulaire de contact">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-[#134F47] text-sm font-medium mb-1.5">
+                        Nom complet <span className="text-[#E78838]">*</span>
+                      </label>
+                      <input
+                        id="name" name="name" type="text" required
+                        placeholder="Votre nom"
+                        className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="structure" className="block text-[#134F47] text-sm font-medium mb-1.5">
+                        Structure
+                      </label>
+                      <input
+                        id="structure" name="structure" type="text"
+                        placeholder="Hôtel, restaurant..."
+                        className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors"
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label htmlFor="name" className="block text-[#134F47] text-sm font-medium mb-1.5">
-                      Nom complet <span className="text-[#E78838]">*</span>
+                    <label htmlFor="phone" className="block text-[#134F47] text-sm font-medium mb-1.5">
+                      Téléphone / WhatsApp <span className="text-[#E78838]">*</span>
                     </label>
                     <input
-                      id="name" name="name" type="text" required
-                      placeholder="Votre nom"
+                      id="phone" name="phone" type="tel" required
+                      placeholder="+227 ..."
                       className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors"
                     />
                   </div>
+
                   <div>
-                    <label htmlFor="structure" className="block text-[#134F47] text-sm font-medium mb-1.5">
-                      Structure
+                    <label htmlFor="message" className="block text-[#134F47] text-sm font-medium mb-1.5">
+                      Votre message <span className="text-[#E78838]">*</span>
                     </label>
-                    <input
-                      id="structure" name="structure" type="text"
-                      placeholder="Hôtel, restaurant..."
-                      className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors"
+                    <textarea
+                      id="message" name="message" rows={4} required
+                      placeholder="Décrivez vos besoins en produits frais..."
+                      className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors resize-none"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="phone" className="block text-[#134F47] text-sm font-medium mb-1.5">
-                    Téléphone / WhatsApp <span className="text-[#E78838]">*</span>
-                  </label>
-                  <input
-                    id="phone" name="phone" type="tel" required
-                    placeholder="+227 ..."
-                    className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors"
-                  />
-                </div>
+                  {status === 'error' && (
+                    <p className="text-red-600 text-sm" role="alert">
+                      {errorMsg}
+                    </p>
+                  )}
 
-                <div>
-                  <label htmlFor="message" className="block text-[#134F47] text-sm font-medium mb-1.5">
-                    Votre message <span className="text-[#E78838]">*</span>
-                  </label>
-                  <textarea
-                    id="message" name="body" rows={4} required
-                    placeholder="Décrivez vos besoins en produits frais..."
-                    className="w-full border border-[#E3EBE2] rounded-xl px-4 py-3 text-sm text-[#16271F] placeholder-[#5B6B61]/50 focus:outline-none focus:border-[#1B9548] transition-colors resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-[#134F47] hover:bg-[#0C322C] text-white font-bold px-7 py-3.5 rounded-full transition-colors"
-                >
-                  Envoyer le message
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    className="w-full flex items-center justify-center gap-2 bg-[#134F47] hover:bg-[#0C322C] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-7 py-3.5 rounded-full transition-colors"
+                  >
+                    {status === 'submitting' ? 'Envoi…' : 'Envoyer le message'}
+                    {status !== 'submitting' && (
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 
