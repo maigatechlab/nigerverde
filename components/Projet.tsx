@@ -22,7 +22,7 @@ export default function Projet() {
             />
             {/* Stat badge — inside image, no z-index leak */}
             <div className="absolute bottom-5 right-5 bg-[#134F47]/90 backdrop-blur-sm rounded-2xl p-4 max-w-[160px]">
-              <p className="font-display font-bold text-[#9C4B00] leading-none mb-2" style={{ fontSize: '2.2rem' }}>
+              <p className="font-display font-bold text-[#FFB981] leading-none mb-2" style={{ fontSize: '2.2rem' }}>
                 400 m²
               </p>
               <p className="text-white/80 text-xs leading-snug">

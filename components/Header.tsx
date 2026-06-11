@@ -96,7 +96,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#E78838] hover:bg-[#F68F31] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors shadow-sm"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#E78838] hover:bg-[#F68F31] text-[#0C322C] text-sm font-bold px-5 py-2.5 rounded-full transition-colors shadow-sm"
             >
               {nav.cta}
             </a>
@@ -140,7 +140,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 bg-[#E78838] hover:bg-[#F68F31] text-white font-bold py-3 px-4 rounded-full text-center transition-colors"
+              className="mt-2 bg-[#E78838] hover:bg-[#F68F31] text-[#0C322C] font-bold py-3 px-4 rounded-full text-center transition-colors"
             >
               {nav.cta}
             </a>

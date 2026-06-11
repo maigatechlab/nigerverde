@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-xs">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/65 text-xs">
           <p>{footer.copyright}</p>
           <p>Fait avec 💚 au Niger</p>
         </div>

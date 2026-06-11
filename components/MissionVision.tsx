@@ -9,7 +9,7 @@ export default function MissionVision() {
       <div className="absolute inset-0 bg-[#134F47]" />
       <div
         className="absolute inset-0 bg-cover bg-center opacity-8"
-        style={{ backgroundImage: "url('/photos/hero-serre.png')" }}
+        style={{ backgroundImage: "url('/photos/hero-serre.webp')" }}
         aria-hidden="true"
       />
 
