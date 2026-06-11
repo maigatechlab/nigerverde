@@ -40,7 +40,7 @@ export default function Faq() {
                 href={`https://${site.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#E78838] hover:bg-[#F68F31] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 bg-[#E78838] hover:bg-[#F68F31] text-[#0C322C] text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
               >
                 Nous contacter
               </a>
