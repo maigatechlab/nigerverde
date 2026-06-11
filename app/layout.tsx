@@ -53,7 +53,11 @@ export const metadata: Metadata = {
     images: ['/photos/hero.webp'],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
     apple: '/favicon-512.png',
   },
 }
