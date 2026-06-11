@@ -27,7 +27,7 @@ export default function Cultures() {
         <div className="max-w-xl mb-14">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-            <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548]">
+            <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#155C35]">
               {cultures.supertitle}
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function Cultures() {
             <div key={group.id}>
               {/* Group header */}
               <div className="flex items-center justify-between mb-5">
-                <div className="flex items-center gap-2 text-[#1B9548]">
+                <div className="flex items-center gap-2 text-[#155C35]">
                   {groupIcons[group.icon]}
                   <span className="text-xs font-bold tracking-[0.15em] uppercase">{group.label}</span>
                 </div>

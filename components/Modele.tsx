@@ -8,7 +8,7 @@ const poles = [
     image: '/photos/vert1.png',
     imageAlt: 'Serre NigerVerdé — production hydroponique sous serre',
     badgeColor: 'bg-[#1B9548]',
-    tagColor: 'bg-[#1B9548]/8 text-[#1B9548] border border-[#1B9548]/20',
+    tagColor: 'bg-[#155C35]/8 text-[#155C35] border border-[#155C35]/20',
     icon: (
       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -64,7 +64,7 @@ export default function Modele() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#E78838]">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#9C4B00]">
               Notre modèle agricole
             </p>
           </div>

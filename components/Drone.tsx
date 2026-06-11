@@ -10,7 +10,7 @@ const specs = [
 const capabilities = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#1B9548]">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#155C35]">
         <circle cx="12" cy="12" r="2" /><path d="M12 10V7M12 17v-3M10 12H7M17 12h-3" /><circle cx="12" cy="6" r="1.5" /><circle cx="12" cy="18" r="1.5" /><circle cx="6" cy="12" r="1.5" /><circle cx="18" cy="12" r="1.5" />
       </svg>
     ),
@@ -19,7 +19,7 @@ const capabilities = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#1B9548]">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#155C35]">
         <path d="M12 2C6 10 4 14 4 17a8 8 0 0 0 16 0c0-3-2-7-8-15Z" /><path d="M12 17a3 3 0 0 0 3-3" />
       </svg>
     ),
@@ -28,7 +28,7 @@ const capabilities = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#1B9548]">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#155C35]">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
       </svg>
     ),
@@ -37,7 +37,7 @@ const capabilities = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#1B9548]">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#155C35]">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
@@ -66,7 +66,7 @@ export default function Drone() {
               />
               <div className="absolute bottom-5 left-5 bg-[#134F47]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl max-w-[180px]">
                 <span className="inline-block bg-[#E78838]/25 text-[#FFB981] text-xs font-bold px-3 py-1 rounded-full mb-2">DÉJÀ ACQUIS</span>
-                <p className="font-display font-bold text-[#E78838] text-xl leading-tight">JT20L-404</p>
+                <p className="font-display font-bold text-[#9C4B00] text-xl leading-tight">JT20L-404</p>
                 <p className="text-white/70 text-xs mt-1">Drone agricole de pulvérisation</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Drone() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548]">Agriculture de précision · Plein champ</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#155C35]">Agriculture de précision · Plein champ</p>
               </div>
               <h2 id="drone-heading" className="font-display font-bold text-[#134F47] text-balance leading-tight mb-5" style={{ fontSize: 'clamp(2rem,3.6vw,3rem)' }}>
                 Un drone agricole, pour intervenir{' '}
@@ -94,7 +94,7 @@ export default function Drone() {
                     <div key={spec.title} className="bg-white border border-[#E3EBE2] rounded-2xl p-4 shadow-sm">
                       <p className="font-display font-bold text-[#134F47] text-base mb-1">
                         {numMatch ? (
-                          <><span className="text-[#E78838]">{numMatch[1]}</span>{' '}{numMatch[2]}</>
+                          <><span className="text-[#9C4B00]">{numMatch[1]}</span>{' '}{numMatch[2]}</>
                         ) : spec.title}
                       </p>
                       <p className="text-[#5B6B61] text-xs leading-snug">{spec.desc}</p>
@@ -110,7 +110,7 @@ export default function Drone() {
       {/* Capabilities */}
       <div className="py-14 bg-[#FBFDF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548] mb-8">Ce que permet le drone</p>
+          <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#155C35] mb-8">Ce que permet le drone</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {capabilities.map((cap) => (
               <div key={cap.title} className="bg-white rounded-2xl p-5 border border-[#E3EBE2] shadow-sm">
