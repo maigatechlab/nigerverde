@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { hero, site } from '@/lib/content'
 
 export default function Hero() {
@@ -7,11 +8,16 @@ export default function Hero() {
       aria-label="Section héros"
     >
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/photos/hero.jpg')" }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src="/photos/hero.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Gradient overlay */}
       <div
