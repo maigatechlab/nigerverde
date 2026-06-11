@@ -30,3 +30,6 @@ Thumbs.db
 .vercel/
 
 .vercel
+
+# Lighthouse reports
+lighthouse-*.json
