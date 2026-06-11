@@ -1,6 +1,31 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import { display, body } from './fonts'
 import './globals.css'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'NigerVerdé',
+  description:
+    "Production de légumes frais, locaux et traçables à Diakindi (Niamey, Niger) grâce à des serres Sawtooth, l'hydroponie NFT, l'énergie solaire et les drones agricoles.",
+  url: 'https://nigerverde.com',
+  telephone: '+22778780808',
+  email: 'contact@nigerverde.com',
+  image: 'https://nigerverde.com/photos/hero.webp',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Diakindi, Niamey',
+    addressCountry: 'NE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 13.5137,
+    longitude: 2.1098,
+  },
+  areaServed: { '@type': 'City', name: 'Niamey' },
+  knowsAbout: ['hydroponie', 'agriculture de précision', 'serres sawtooth', 'énergie solaire'],
+}
 
 export const metadata: Metadata = {
   title: 'NigerVerdé — Légumes frais, climate-smart à Niamey',
@@ -46,7 +71,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fetchPriority="high"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </body>
     </html>
   )
 }
