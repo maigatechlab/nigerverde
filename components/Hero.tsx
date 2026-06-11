@@ -104,7 +104,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <a
             href="#projet"
-            className="w-full sm:w-auto bg-[#1B9548] hover:bg-[#21A34E] text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-white"
+            className="w-full sm:w-auto bg-[#134F47] hover:bg-[#155C35] text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-white"
           >
             {hero.ctaPrimary}
           </a>

@@ -22,7 +22,7 @@ export default function Projet() {
             />
             {/* Stat badge — inside image, no z-index leak */}
             <div className="absolute bottom-5 right-5 bg-[#134F47]/90 backdrop-blur-sm rounded-2xl p-4 max-w-[160px]">
-              <p className="font-display font-bold text-[#E78838] leading-none mb-2" style={{ fontSize: '2.2rem' }}>
+              <p className="font-display font-bold text-[#9C4B00] leading-none mb-2" style={{ fontSize: '2.2rem' }}>
                 400 m²
               </p>
               <p className="text-white/80 text-xs leading-snug">
@@ -35,7 +35,7 @@ export default function Projet() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-              <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548]">
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#155C35]">
                 {projet.supertitle}
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Projet() {
               {projet.engagements.map((e) => (
                 <li key={e.title} className="flex items-start gap-3">
                   <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#1B9548]/15 flex items-center justify-center" aria-hidden="true">
-                    <svg className="w-3 h-3 text-[#1B9548]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <svg className="w-3 h-3 text-[#155C35]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>

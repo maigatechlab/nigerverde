@@ -36,7 +36,7 @@ export default function Why() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-            <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#E78838]">
+            <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#9C4B00]">
               {why.supertitle}
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function Why() {
               <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-6">
                 {icons[item.icon]}
               </div>
-              <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-[#E78838] transition-colors duration-200">
+              <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-[#9C4B00] transition-colors duration-200">
                 {item.title}
               </h3>
               <p className="text-white/65 text-sm leading-relaxed">{item.desc}</p>

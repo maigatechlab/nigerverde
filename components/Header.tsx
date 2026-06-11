@@ -82,8 +82,8 @@ export default function Header() {
                   href={link.href}
                   className={`text-sm font-semibold transition-colors ${
                     isActive
-                      ? scrolled ? 'text-[#1B9548]' : 'text-[#E78838]'
-                      : scrolled ? 'text-[#16271F] hover:text-[#1B9548]' : 'text-white/90 hover:text-white'
+                      ? scrolled ? 'text-[#155C35]' : 'text-[#9C4B00]'
+                      : scrolled ? 'text-[#16271F] hover:text-[#155C35]' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -132,7 +132,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-[#16271F] font-semibold py-2.5 px-3 rounded-lg hover:bg-[#F6EFE6] hover:text-[#1B9548] transition-colors"
+                className="text-[#16271F] font-semibold py-2.5 px-3 rounded-lg hover:bg-[#F6EFE6] hover:text-[#155C35] transition-colors"
               >
                 {link.label}
               </a>

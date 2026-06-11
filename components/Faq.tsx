@@ -15,7 +15,7 @@ export default function Faq() {
           <div className="lg:sticky lg:top-28">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-              <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#1B9548]">
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#155C35]">
                 {faq.supertitle}
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function Faq() {
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${i}`}
                   >
-                    <span className={`font-display font-semibold text-sm ${isOpen ? 'text-[#1B9548]' : 'text-[#134F47]'}`}>
+                    <span className={`font-display font-semibold text-sm ${isOpen ? 'text-[#155C35]' : 'text-[#134F47]'}`}>
                       {item.q}
                     </span>
                     <span
@@ -90,7 +90,7 @@ export default function Faq() {
                     role="region"
                     className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48' : 'max-h-0'}`}
                   >
-                    <p className="px-5 pb-4 text-[#1B9548]/80 text-sm leading-relaxed">{item.a}</p>
+                    <p className="px-5 pb-4 text-[#155C35]/80 text-sm leading-relaxed">{item.a}</p>
                   </div>
                 </div>
               )

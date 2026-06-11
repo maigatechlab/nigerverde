@@ -2,13 +2,13 @@ import { technologie } from '@/lib/content'
 
 const icons: Record<string, React.ReactNode> = {
   sawtooth: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <path d="M3 9.5 12 3l9 6.5V21H3V9.5Z" />
       <path d="M9 21V12h6v9" />
     </svg>
   ),
   nft: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <path d="M5 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2" />
       <path d="M19 12h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2" />
       <path d="M5 15h14" />
@@ -17,26 +17,26 @@ const icons: Record<string, React.ReactNode> = {
     </svg>
   ),
   cocopeat: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <path d="M12 22V12" />
       <path d="M12 12C12 8 8 5 4 6c0 4 3 7 8 6" />
       <path d="M12 12c0-4 4-7 8-6-1 4-4 7-8 6" />
     </svg>
   ),
   solar: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <rect x="2" y="6" width="20" height="12" rx="1" />
       <path d="M12 6v12M2 12h20M7 6v12M17 6v12" />
     </svg>
   ),
   water: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <path d="M12 2C6 10 4 14 4 17a8 8 0 0 0 16 0c0-3-2-7-8-15Z" />
       <path d="M12 17a3 3 0 0 0 3-3" />
     </svg>
   ),
   drone: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#1B9548]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#155C35]" aria-hidden="true">
       <circle cx="12" cy="12" r="2" />
       <path d="M12 10V7M12 17v-3M10 12H7M17 12h-3" />
       <circle cx="12" cy="6" r="1.5" />
@@ -47,7 +47,7 @@ const icons: Record<string, React.ReactNode> = {
   ),
 }
 
-const numColors = ['text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#E78838]/60', 'text-[#5B6B61]/50', 'text-[#E78838]/60']
+const numColors = ['text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#9C4B00]/60', 'text-[#5B6B61]/50', 'text-[#9C4B00]/60']
 
 export default function Technologie() {
   return (
@@ -60,7 +60,7 @@ export default function Technologie() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
             <div className="w-8 h-0.5 bg-[#E78838]" aria-hidden="true" />
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#E78838]">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#9C4B00]">
               {technologie.supertitle}
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Technologie() {
         <div className="text-center mt-12">
           <a
             href="#cultures"
-            className="inline-flex items-center gap-2 border-2 border-[#1B9548] text-[#1B9548] hover:bg-[#1B9548] hover:text-white font-bold px-7 py-3.5 rounded-full transition-all focus-visible:outline-2 focus-visible:outline-[#1B9548]"
+            className="inline-flex items-center gap-2 border-2 border-[#1B9548] text-[#155C35] hover:bg-[#1B9548] hover:text-white font-bold px-7 py-3.5 rounded-full transition-all focus-visible:outline-2 focus-visible:outline-[#1B9548]"
           >
             {technologie.cta}
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
