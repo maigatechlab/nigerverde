@@ -25,15 +25,17 @@ export async function sendContactEmail(formData: FormData) {
     <p><strong>Message :</strong><br>${message.replace(/\n/g, '<br>')}</p>
   `
 
-  try {
-    await resend.emails.send({
-      from: 'NigerVerdé Contact <contact@nigerverde.com>',
-      to: 'contact@nigerverde.com',
-      subject,
-      html,
-    })
-    return { success: true }
-  } catch {
+  const { error: sendError } = await resend.emails.send({
+    from: 'NigerVerdé Contact <contact@nigerverde.com>',
+    to: 'contact@nigerverde.com',
+    subject,
+    html,
+  })
+
+  if (sendError) {
+    console.error('Resend error:', sendError)
     return { error: 'Erreur serveur. Réessayez ou contactez-nous par WhatsApp.' }
   }
+
+  return { success: true }
 }
