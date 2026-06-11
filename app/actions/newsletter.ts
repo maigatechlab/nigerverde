@@ -9,16 +9,21 @@ export async function subscribeNewsletter(formData: FormData) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY)
+  const audienceId = process.env.RESEND_AUDIENCE_ID
 
-  const { error } = await resend.emails.send({
-    from: 'NigerVerdé <contact@nigerverde.com>',
-    to: 'contact@nigerverde.com',
-    subject: `NigerVerdé — Inscription newsletter : ${email}`,
-    html: `<p>Nouvelle inscription newsletter : <strong>${email}</strong></p>`,
+  if (!audienceId) {
+    console.error('RESEND_AUDIENCE_ID not set')
+    return { error: 'Erreur de configuration. Réessayez.' }
+  }
+
+  const { error } = await resend.contacts.create({
+    email,
+    audienceId,
+    unsubscribed: false,
   })
 
   if (error) {
-    console.error('Newsletter Resend error:', error)
+    console.error('Resend contacts error:', error)
     return { error: 'Erreur serveur. Réessayez.' }
   }
 
