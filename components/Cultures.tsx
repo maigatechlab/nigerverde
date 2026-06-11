@@ -53,7 +53,7 @@ export default function Cultures() {
                   {groupIcons[group.icon]}
                   <span className="text-xs font-bold tracking-[0.15em] uppercase">{group.label}</span>
                 </div>
-                <span className="text-xs text-[#5B6B61]/70 hidden sm:block">{group.tech}</span>
+                <span className="text-xs text-[#5B6B61] hidden sm:block">{group.tech}</span>
               </div>
 
               {/* Cards grid */}
