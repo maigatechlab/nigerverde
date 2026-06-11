@@ -47,7 +47,7 @@ const icons: Record<string, React.ReactNode> = {
   ),
 }
 
-const numColors = ['text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#5B6B61]/50', 'text-[#9C4B00]/60', 'text-[#5B6B61]/50', 'text-[#9C4B00]/60']
+const numColors = ['text-[#5B6B61]', 'text-[#5B6B61]', 'text-[#5B6B61]', 'text-[#9C4B00]', 'text-[#5B6B61]', 'text-[#9C4B00]']
 
 export default function Technologie() {
   return (

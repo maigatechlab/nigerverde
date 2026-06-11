@@ -61,7 +61,7 @@ export default function FinalCta() {
               Demander un devis sur WhatsApp
             </a>
 
-            <p className="text-white/40 text-xs text-center mb-8">{site.phone}</p>
+            <p className="text-white/70 text-xs text-center mb-8">{site.phone}</p>
 
             {/* Secondary contact details */}
             <div className="space-y-3 pt-4 border-t border-white/10">
@@ -89,7 +89,7 @@ export default function FinalCta() {
 
           {/* Right — secondary form */}
           <div>
-            <p className="text-white/50 text-xs font-bold tracking-[0.15em] uppercase mb-5">
+            <p className="text-white/80 text-xs font-bold tracking-[0.15em] uppercase mb-5">
               Ou laissez un message écrit
             </p>
             <div className="bg-white rounded-3xl p-8 shadow-xl">
