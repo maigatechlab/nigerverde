@@ -82,7 +82,7 @@ export default function Header() {
                   href={link.href}
                   className={`text-sm font-semibold transition-colors ${
                     isActive
-                      ? scrolled ? 'text-[#155C35]' : 'text-[#9C4B00]'
+                      ? scrolled ? 'text-[#155C35]' : 'text-[#E78838]'
                       : scrolled ? 'text-[#16271F] hover:text-[#155C35]' : 'text-white/90 hover:text-white'
                   }`}
                 >

@@ -14,6 +14,7 @@ export default function TopBar() {
         <div className="flex items-center gap-4 sm:gap-6">
           <a
             href={`tel:${site.phone}`}
+            aria-label={`Appeler le ${site.phone}`}
             className="flex items-center gap-1.5 text-green-100/80 hover:text-white transition-colors"
           >
             <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -24,6 +25,7 @@ export default function TopBar() {
 
           <a
             href={`mailto:${site.email}`}
+            aria-label={`Envoyer un e-mail à ${site.email}`}
             className="flex items-center gap-1.5 text-green-100/80 hover:text-white transition-colors"
           >
             <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
