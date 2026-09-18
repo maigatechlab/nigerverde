@@ -33,3 +33,8 @@ Thumbs.db
 
 # Lighthouse reports
 lighthouse-*.json
+
+# Documents confidentiels — dossier de financement, pièces promoteurs.
+# Ne jamais committer : dépôt public.
+docs/
+graphics/*.docx
